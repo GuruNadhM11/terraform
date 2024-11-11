@@ -1,4 +1,24 @@
-module "ec2-instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "5.7.1"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
+    }
+  }
+
+  required_version = ">= 1.2.0"
+}
+
+provider "aws" {
+  region  = "ap-south-1"
+  profile = "gurunadh"
+}
+
+resource "aws_instance" "example_server" {
+  ami           = "ami-04e914639d0cca79a"
+  instance_type = "t1.micro"
+
+  tags = {
+    Name = "LearningTerraform"
+  }
 }

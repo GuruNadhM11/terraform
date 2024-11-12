@@ -10,13 +10,13 @@ terraform {
 }
 
 provider "aws" {
-  region  = "ap-south-1"
-  profile = "gurunadh"
+  region  = "us-east-1"
+  profile = "gurunadhm11"
 }
 
 resource "aws_instance" "example_server" {
-  ami           = "ami-04e914639d0cca79a"
-  instance_type = "t1.micro"
+  ami           = "ami-063d43db0594b521b"
+  instance_type = "t2.micro"
 
   tags = {
     Name = "LearningTerraform"
